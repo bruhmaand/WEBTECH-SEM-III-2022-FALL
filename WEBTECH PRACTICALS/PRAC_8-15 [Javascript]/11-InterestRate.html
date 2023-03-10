@@ -1,0 +1,57 @@
+<!--
+Create a html page that accepts Principle Amount, No. of Years & Rate of Interest from 
+3 text fields, when you click “Calculate Interest” button, the data is sent to a function that returns the simple interest. When you click on “Final Amount” button, the final amount by 
+adding principle amount and interest should be displayed. [ Use Functions]
+-->
+<html>
+  <head>
+    <title>PRAC 11</title>
+    <script>
+    //Interest
+    var p,r,n,i
+    function myIntrest(){
+      
+      p=parseInt(f.p.value)
+      r=parseInt(f.r.value)
+      n=parseInt(f.n.value)
+      i=(p*r*n)/100
+      
+      alert("Simple intrest is: "+i)
+    }
+    function myP(){
+     
+      myi=p+i
+      alert("TOTAL AMOUNT IS: "+myi)
+      
+    }
+    
+    </script>
+  </head>
+  <body>
+    <form name=f>
+      <table border=0>
+        
+        <tr>
+      <td>Principle Amount:</td>
+      <td><input type=Number id=p></td>
+      </tr>
+      
+      <tr>
+      <td>No. of years:</td>
+      <td><input type=number id=n></td>
+      </tr>
+      
+      <tr>
+      <td>Rate of interest:</td>
+      <td><input type=number id=r></td>
+      </tr>
+      </table>
+      <br>
+    <input type=button value="Calculate Interest" OnClick="myIntrest()"><br><br>
+    
+    <input type=button value="Final Amount" OnClick="myP()" ><br><br>
+    
+   
+    </form>
+  </body>
+</html>

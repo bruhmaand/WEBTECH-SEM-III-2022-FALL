@@ -1,0 +1,113 @@
+<!--         Sachin VERMA
+AIM:Design a Login Form containing User Name and password. The password should contain max 8
+characters. When user name and password match with predefined values, a welcome message
+should be displayed otherwise error message should be displayed. Maximum 3 attempts should
+be allowed for wrong passwords otherwise the application should end. [Use If]
+-->
+<html>
+  <head>
+    <title>prac_16 </title>
+    <style>
+     #reqUser{color:red}
+     #reqPass{color:red}
+    </style>
+    <script>
+    //global var
+    //function for username Requirements 
+    var login_attempt=3;
+    function myFun(){
+      
+      // for 4.regEx
+      var rightUsr=/^[a-zA-Z0-9_]+$/;
+      
+      var rightPass=/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]/;
+      // taking input box username value in a variable 
+      var a=document.getElementById("user").value
+      var b=document.getElementById("pass").value
+      // 1. username can't be empty 
+      if(a==""){
+        document.getElementById("reqUser").innerHTML="username cant be empty"
+        return false;
+      }
+
+        // 2. username can't be less than 4 character 
+        else if(a.length<4){
+        document.getElementById("reqUser").innerHTML="username should be atleast more than 4 characters"
+        return false;}
+        // 3.username should be less than 20 characters
+        else if(a.length>16){
+        document.getElementById("reqUser").innerHTML="username should be less than 16 characters"
+        return false;
+        }
+        //4.specila character not allowed  /regEx
+
+       else if(!a.match(rightUsr)){
+document.getElementById("reqUser").innerHTML="special characters are not allowed<br>Only A-z,0-9,_(underscore) are allowed."
+       return false;
+
+       }
+       else if(a.match(rightUsr)){
+document.getElementById("reqUser").innerHTML=""
+       ;
+       }
+       //password 
+       
+      if(b==""){
+        document.getElementById("reqPass").innerHTML="Password can't be empty"
+        return false;
+      }
+      
+    //  if(!b.match(rightPass)){
+
+ //       return false;
+     // }
+       
+    
+      if(b.match(rightPass)) {
+        document.write("<h1>Welcome!</h1> ");
+        return true;
+      }
+      else
+      {
+        //
+
+        //
+        if(login_attempt==0){
+          alert("No login attempt left program ended! ")
+        }
+        else
+        {
+          //
+document.getElementById("reqPass").innerHTML="Login failed! <br>please include:<br>atleast 1 uppercase  <br>atleast 1 lowercase <br>atleast 1 number<br>atleast 1 special character."
+          //
+          login_attempt=login_attempt-1;
+          alert("login failed! " +login_attempt+" attempts left.");
+          if(login_attempt==0){
+            document.getElementById("user").disabled=true;
+            document.getElementById("pass").disabled=true;
+          }
+        }
+      }
+      
+       return false;
+    }
+     //functions for Password Requirements
+     //3 attempt 
+      
+     
+    </script>
+  </head>
+  <body>
+    <form name="myForm" onsubmit="return myFun();Validate_pass() ">
+      Username:
+      <input type="text" id="user">
+      
+      <p id="reqUser"></p>
+      Password :
+      <input type="password" id="pass" maxlength ="8">
+      <p id="reqPass"></p>
+      <br>
+      <input type="submit" value="Sign Up">
+    </form>
+  </body>
+</html>

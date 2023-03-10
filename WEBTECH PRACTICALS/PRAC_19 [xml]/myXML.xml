@@ -1,0 +1,17 @@
+***
+This code doesn't work FIX IT? 
+***
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ? >
+
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+
+<info>
+  <name>
+   <surname>VERMA</surname>
+   <firstname>Sachin</firstname>
+   <height>6"</height>
+   <age>18</age>
+   <course>Bsc.CS</course>
+  </name>
+</info>

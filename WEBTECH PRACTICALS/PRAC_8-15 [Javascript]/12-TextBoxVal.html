@@ -1,0 +1,30 @@
+<!--
+Design a webpage for validation of textbox. (Textbox must not be empty)
+-->
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Practical 8</title>
+    <script>
+    //Textbox not empty
+function req() {
+  var x
+  x=document.getElementById("v").value;
+  if(x.trim()=="") {
+    alert("Textbox must not be empty! ");
+  }
+  else{
+    alert("input is ok! ")
+  }
+}
+      
+    </script>
+  </head>
+  <body>
+    <form name=f>
+    Textbox:
+    <input type=text id=v><br><br>
+    <input type=button name=t value=Validate OnClick="req() ">
+    </form>
+  </body>
+</html>

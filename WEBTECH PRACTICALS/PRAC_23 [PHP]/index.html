@@ -1,0 +1,32 @@
+<!--Aim:Write a php program to retrieve data from an html form.
+-->
+
+<!DOCTYPE html>
+<html >
+<head>
+    <title>PHP practical </title>
+</head>
+<body>
+    <h1>Submit your form</h1>
+
+    <form action="./service.php">
+Name :
+<input type="text" name="name" placeholder="Enter your name.."> <br>
+
+Gender :
+<input type="radio" value="male" name="gender"> Male
+ <input type="radio" value="female" name="gender"> Female <br>
+
+        <b>Select some of the checboxes</b><br>
+
+<input type="checkbox" value="Cricket" name="cricket"/>
+        <label for="cricket">Cricket</label><br>
+        <input type="checkbox" value="Football" name="football"/>
+        <label for="football">Football</label><br>
+        <input type="checkbox" value="Rugby" name="rugby"/>
+        <label for="Rugby">Rugby</label>
+        <br>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

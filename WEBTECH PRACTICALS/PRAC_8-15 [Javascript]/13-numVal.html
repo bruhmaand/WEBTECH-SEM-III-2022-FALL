@@ -1,0 +1,32 @@
+<!--
+Design a webpage for validating input a number between 1 and 10.
+-->
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Practical 13</title>
+    <script>
+    //Number validation 1 to 10
+    function val(){
+      var a
+      a=parseInt(f.n.value) 
+      if(isNaN(a)){
+        alert("Textbox can't be be empty")
+      }
+      else if(a>10 ||a<1)
+      alert("You can't enter more than 10, less than 1")
+      
+      else{
+        alert("Input is CORRECT!")
+      }
+    }
+    </script>
+  </head>
+  <body>
+     <form name=f>
+      Enter a number:
+      <input type=number name=n><br><br>
+      <input type=button value="Validate" OnClick="val() ">
+      </form>
+  </body>
+</html>
